@@ -6,10 +6,11 @@ const botones = document.querySelector(".botones");
 
 
 
-//const calculadora = () => {
+const calculadora = () => {
   
     
     botones.addEventListener('click', evento => {
+      
       
      if (evento.target.nodeName === 'BUTTON') {
        evento.target.style.backgroundColor = 'tomato'
@@ -18,10 +19,7 @@ const botones = document.querySelector(".botones");
     });
 
 
-//}
-
-
-// ejemplo de calculadora
+}
 
 
 
