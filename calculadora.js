@@ -21,7 +21,7 @@ const botones = document.querySelector(".botones");
 //}
 
 
-// ejemplo
+// ejemplo de calculadora
 
 
 
