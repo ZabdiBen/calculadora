@@ -6,7 +6,7 @@ const botones = document.querySelector(".botones");
 
 
 
-const calculadora = () => {
+//const calculadora = () => {
   
     
     botones.addEventListener('click', evento => {
@@ -19,7 +19,7 @@ const calculadora = () => {
     });
 
 
-}
+//}
 
 
 
