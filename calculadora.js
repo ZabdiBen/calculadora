@@ -6,19 +6,42 @@ const botones = document.querySelector(".botones");
 
 
 
-//const calculadora = () => {
+const calculadora = () => {
   
+    //hacemos una condicion de seguridad por si hay un error con los botones
+    if(!botones) return
     
     botones.addEventListener('click', evento => {
       
-     if (evento.target.nodeName === 'BUTTON') {
-       evento.target.style.backgroundColor = 'tomato'
-     }
+    //cogemos el evento y el objeto target
+    const t = evento.target;
+    //cogemos el valor de data
+    const d = t.dataset; 
+    
+    //detectar si se pulso un numero
+    if(d.numero) console.log('numero')
+    //detectar si se pulso una operación matematica
+    if(d.operacion) console.log('operacion')
+    //detectar si se pulso un decimal
+    if(d.decimal) console.log('decimal')
+    //detectar si se pulso limpiar
+    if(d.limpiar) console.log('limpiar')
+    //detectar si se pulso la tecla igual
+    if(d.calcular) console.log('igual')
+    
+    
+      
+    // if (evento.target.nodeName === 'BUTTON') {
+    //   evento.target.style.backgroundColor = 'tomato'
+    // }
      
     });
 
 
-//}
+}
+
+calculadora();
+
 
 
 
