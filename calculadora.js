@@ -56,17 +56,17 @@ console.log(numero1, numero2, tipoOperacion)
 
 
 const numeros = numero => {
-    // como no tenemos como valor inicial 0 no requiere ninguna condicion
-    
-    display.textContent != numero
-    ? display.textContent = numero
-    : numero++
-    //display.textContent += numero 
-    numero1 = Number(display.textContent) //guardamos el primer numero
+    // hacemos una condicion si exite un operacion matematica, si existe entonces que lo quite y ponga un numero
+
+    display.innerText != numero ?
+        display.textContent = numero :
+        numero++
+        //display.textContent += numero 
+        numero1 = Number(display.textContent) //guardamos el primer numero
     console.log(numero1)
-    
-  // if (display.textContent != numero ) 
-   //{ display.textContent = numero }
+
+    // if (display.textContent != numero ) 
+    //{ display.textContent = numero }
 }
 const operacionMatematica = (t, operacion) => {
     display.textContent = t.textContent // escribimos en pantalla el valor del boton de la operacion
@@ -98,7 +98,7 @@ const igual = (numero1, tipoOperacion, numero2, calcular) => {
         case 'divide':
             display.textContent = numero1 / numero2
             break;
-            default:
+        default:
             break;
     }
 }

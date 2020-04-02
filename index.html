@@ -20,18 +20,26 @@
     <!-- div del titulo -->
 
     <div class="container">
-        <!-------------------- DISPLAY ------------------------->
-        <div class="display bg-secondary text-white  col-md-"></div>
+
+        <!-------------------- DISPLAY EXTERIOR ------------------------->
+        <div class="display bg-secondary text-white  col-md-">
+            <p id="valor-externo">8</p>
+        </div>
+        <!--div de display-->
+        <!-------------------- DISPLAY INTERIOR ------------------------->
+        <div class="historia bg-secondary text-white  col-md-">
+            <p class="" id="valor-interno">8</p>
+        </div>
         <!--div de display-->
 
         <div class="botones">
 
             <!--botones de operaciones-->
-
             <button class="operacion" data-operacion="add">+</button>
-            <button class="operacion" data-operacion="subtract"> - </button>
-            <button class="operacion" data-operacion="multiply">x</button>
-            <button class="operacion" data-operacion="divide">÷</button>
+            <button class="operacion" data-operacion="subtract">-</button>
+            <!-- Se necesita escribir el * y / en codigo incluso en el html por que causa problemas cuando la maquina lo lee, aunque todavia no se por que -->
+            <button class="operacion" data-operacion="multiply">&times;</button>
+            <button class="operacion" data-operacion="divide">&#247;</button>
 
             <br />
             <br />
