@@ -1,7 +1,13 @@
 // creamos las variables principales
 
 const display = document.querySelector(".display");
+const historia = document.querySelector(".historia");
 const botones = document.querySelector(".botones");
+
+
+/*
+Tengo 2 pantallas donde muestro el resultado, display e historia
+*/
 
 
 
@@ -21,11 +27,11 @@ const calculadora = () => {
 
         //detectar si se pulso un numero
         //Hacemos una funcion para saber que numero presiono
-        if (d.numero) numeros(d.numero) //funcion terminada
+        if (d.numero) numeros(d.numero)
 
         //detectar si se pulso una operación matematica
         //Hacemos una funcion matematica para saber que calculo es
-        if (d.operacion) operacionMatematica(t, d.operacion) // funcion terminada
+        if (d.operacion) operacionMatematica(t, d.operacion)
 
         //detectar si se pulso un decimal
         //Hacemos una funcion para detectar el decimal del numero presionado
@@ -39,6 +45,9 @@ const calculadora = () => {
         //Hacemos una funcion que hacer la operacion y mostrar el resultado en el display
         if (d.calcular) igual(d.calcular)
 
+        //detectamos si la persona quiere borrar un numero
+        if (d.borrar) borrar(d.borrar)
+
         //Ejemplo
         // if (evento.target.nodeName === 'BUTTON') {
         //     evento.target.style.backgroundColor = 'tomato'
@@ -51,27 +60,39 @@ const calculadora = () => {
 
 calculadora();
 
-var numero1, numero2, tipoOperacion;
-console.log(numero1, numero2, tipoOperacion)
-
 
 const numeros = numero => {
-    // hacemos una condicion si exite un operacion matematica, si existe entonces que lo quite y ponga un numero
+    /**
+     * Me hace falta lo siguiente:
+     * 1. Que diferencie entre numero y operacion
+     * 2. Que cuando pulse una operacion el numero y el operador pasen al div de historia
+     * 3. Que en el display coloque coma cuando sea necesario
+     * 4. que la calcauladora sirva
+     */
+    let n = Number(numero)
+    let valor = n.toLocaleString('en')
 
-    display.innerText != numero ?
-        display.textContent = numero :
-        numero++
-        //display.textContent += numero 
-        numero1 = Number(display.textContent) //guardamos el primer numero
-    console.log(numero1)
+    display.textContent += valor
+
+    //display.textContent += numero 
+    //numero1 = Number(display.textContent) //guardamos el primer numero
+
+
+    console.log(valor)
+
+    // Quiero pasarle que muestre comas 
+
 
     // if (display.textContent != numero ) 
     //{ display.textContent = numero }
 }
+
 const operacionMatematica = (t, operacion) => {
-    display.textContent = t.textContent // escribimos en pantalla el valor del boton de la operacion
-    tipoOperacion = operacion // guardamos el tipo de operacion para obtener la igualdad mas adelante
-    console.log(tipoOperacion)
+    //lo que tengo que hacer aca el pasarlo de display a historia mas la operacion que se puso
+
+    historia.textContent = t.textContent // escribimos en pantalla el valor del boton de la operacion
+    calcular = operacion // guardamos el tipo de operacion para obtener la igualdad mas adelante
+    console.log(calcular)
 }
 
 const decimal = decimal => {
@@ -82,10 +103,10 @@ const limpiar = limpiar => {
     display.textContent = ' '
 }
 
-const igual = (numero1, tipoOperacion, numero2, calcular) => {
+const igual = (calcular, numero1, numero2) => {
     numero2 = Number(display.textContent)
     console.log(numero2)
-    switch (tipoOperacion) {
+    switch (calcular) {
         case 'add':
             display.textContent = numero1 + numero2
             break;
@@ -103,6 +124,8 @@ const igual = (numero1, tipoOperacion, numero2, calcular) => {
     }
 }
 
+
+var numero1, numero2, calcular;
 
 
 
