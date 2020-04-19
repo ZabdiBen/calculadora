@@ -60,32 +60,43 @@ const calculadora = () => {
 
 calculadora();
 
+/**
+ * Me hace falta lo siguiente:
+ * 1. Que diferencie entre numero y operacion
+ * 2. Que cuando pulse una operacion el numero y el operador pasen al div de historia
+ * 3. Que en el display coloque coma cuando sea necesario
+ * 4. que la calcauladora sirva
+ */
+
 
 const numeros = numero => {
-    /**
-     * Me hace falta lo siguiente:
-     * 1. Que diferencie entre numero y operacion
-     * 2. Que cuando pulse una operacion el numero y el operador pasen al div de historia
-     * 3. Que en el display coloque coma cuando sea necesario
-     * 4. que la calcauladora sirva
-     */
-    let n = Number(numero)
-    let valor = n.toLocaleString('en')
+    // let cantidad = display.textContent += numero;
 
-    display.textContent += valor
+    // numerosCalculadora = () => {
+    //     let n = Number(numero);
+    //     let mostrar = cantidad.toLocaleString('en');
+    // }
 
-    //display.textContent += numero 
-    //numero1 = Number(display.textContent) //guardamos el primer numero
-
-
-    console.log(valor)
-
-    // Quiero pasarle que muestre comas 
-
-
-    // if (display.textContent != numero ) 
-    //{ display.textContent = numero }
+    if (display.textContent != numero) {
+        display.textContent += numero
+    } else if (display.textContent += numero) {
+        numero1 = Number(display.textContent) //guardamos el primer numero
+        let valor = numero1.toLocaleString('en');
+        display.textContent = valor
+    }
+    // problema anterior no detectaba el valor final, por eso no agrgaba el toLocaleString
+    // todavia no detecta el localestring en el mismo div si no me sirve uso otro div
 }
+
+// if (display.textContent != numero ) 
+//{ display.textContent = numero }
+
+
+// numerosCalculadora = () => {
+//     numeros().toLocaleString('en');
+// }
+
+
 
 const operacionMatematica = (t, operacion) => {
     //lo que tengo que hacer aca el pasarlo de display a historia mas la operacion que se puso
