@@ -1,5 +1,6 @@
 // creamos las variables principales
 
+const displayNumeros = document.querySelector(".numeros");
 const display = document.querySelector(".display");
 const historia = document.querySelector(".historia");
 const botones = document.querySelector(".botones");
@@ -43,7 +44,7 @@ const calculadora = () => {
 
         //detectar si se pulso la tecla igual
         //Hacemos una funcion que hacer la operacion y mostrar el resultado en el display
-        if (d.calcular) igual(d.calcular)
+        if (d.calcular) igual()
 
         //detectamos si la persona quiere borrar un numero
         if (d.borrar) borrar(d.borrar)
@@ -68,75 +69,78 @@ calculadora();
  * 4. que la calcauladora sirva
  */
 
+// let valor;
 
 const numeros = numero => {
-    // let cantidad = display.textContent += numero;
 
-    // numerosCalculadora = () => {
-    //     let n = Number(numero);
-    //     let mostrar = cantidad.toLocaleString('en');
-    // }
+    variable = numero
 
-    if (display.textContent != numero) {
-        display.textContent += numero
-    } else if (display.textContent += numero) {
-        numero1 = Number(display.textContent) //guardamos el primer numero
-        let valor = numero1.toLocaleString('en');
-        display.textContent = valor
+    if (displayNumeros.textContent != numero) {
+        displayNumeros.textContent += numero
     }
-    // problema anterior no detectaba el valor final, por eso no agrgaba el toLocaleString
-    // todavia no detecta el localestring en el mismo div si no me sirve uso otro div
+    cantidad = Number(displayNumeros.textContent) //cambiamos de un string a numero y guardamos el primer numero
+    valor = cantidad
+        // .toLocaleString('en'); //mostramos los numeros con coma, ya que le asignamos a como se escribieran en una cierta region
+    display.textContent = valor;
 }
 
-// if (display.textContent != numero ) 
-//{ display.textContent = numero }
 
-
-// numerosCalculadora = () => {
-//     numeros().toLocaleString('en');
-// }
-
-
+// historia.textContent = PrimerVariable + tipo
 
 const operacionMatematica = (t, operacion) => {
-    //lo que tengo que hacer aca el pasarlo de display a historia mas la operacion que se puso
+    tipo = t.textContent
 
-    historia.textContent = t.textContent // escribimos en pantalla el valor del boton de la operacion
+
+    if (display.textContent = valor) {
+        historia.textContent = valor + tipo // escribimos en pantalla el valor del boton de la operacion
+        PrimerVariable = historia.textContent
+    }
+
+    if (historia.textContent = valor + tipo) {
+        displayNumeros.textContent = ' '
+        display.textContent = ' '
+    }
+
+    // if (display.textContent != variable) {
+    //     historia.textContent = historia.textContent + tipo
+    //     PrimerVariable = historia.textContent
+
+    // }
+    if (historia.textContent = final) { //Esto es lo mismo que decir, si hay una variable llamada final, haz esto
+        historia.textContent = historia.textContent + tipo
+        PrimerVariable = historia.textContent
+    }
+
+
     calcular = operacion // guardamos el tipo de operacion para obtener la igualdad mas adelante
-    console.log(calcular)
 }
 
 const decimal = decimal => {
 
 }
 
-const limpiar = limpiar => {
-    display.textContent = ' '
-}
+const igual = () => {
+    SegundaVariable = display.textContent; // Meto en una variable el numero en display
 
-const igual = (calcular, numero1, numero2) => {
-    numero2 = Number(display.textContent)
-    console.log(numero2)
-    switch (calcular) {
-        case 'add':
-            display.textContent = numero1 + numero2
-            break;
-        case 'subtract':
-            display.textContent = numero1 - numero2
-            break;
-        case 'multiply':
-            display.textContent = numero1 * numero2
-            break;
-        case 'divide':
-            display.textContent = numero1 / numero2
-            break;
-        default:
-            break;
+    salida = PrimerVariable += SegundaVariable; // Uno las 2 variables
+
+    resultado = eval(salida)
+
+    final = historia.textContent = resultado // paso el resultado al div de historia
+
+    if (historia.textContent = resultado) {
+        displayNumeros.textContent = ' '
+        display.textContent = ' '
     }
+
+}
+const limpiar = () => {
+    displayNumeros.textContent = ""
+    display.textContent = ""
+    historia.textContent = ""
 }
 
 
-var numero1, numero2, calcular;
 
 
 
